@@ -445,6 +445,7 @@
 				F9C215041B3C1936007BF781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9C215051B3C1936007BF781 /* Build configuration list for PBXNativeTarget "JEEPageControlDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -453,6 +454,7 @@
 				F9C215071B3C1936007BF781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

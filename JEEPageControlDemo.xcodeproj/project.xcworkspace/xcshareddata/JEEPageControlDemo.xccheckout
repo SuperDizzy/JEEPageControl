@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B95F97D7-AFE6-4919-81E3-84F65D708BD7</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>JEEPageControlDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>8004438DF6BF8DAFC4259BAF2AC8AF6A711ACA47</key>
 		<string>https://github.com/zackjee/JEEPageControl.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>JEEPageControlDemo.xcodeproj/project.xcworkspace</string>
+	<string>JEEPageControlDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8004438DF6BF8DAFC4259BAF2AC8AF6A711ACA47</key>
