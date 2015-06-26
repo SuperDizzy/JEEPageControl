@@ -17,19 +17,15 @@ class JEEPageControl: UIControl, UIScrollViewDelegate {
     var pageItem: JEEPageItem!
     var pageScrollView: UIScrollView!
     var currentPage: Int = 1
-    var onColorForPage: ((pageIndex: Int) -> UIColor)?
-    var offColorForPage: ((pageIndex: Int) -> UIColor)?
     
     private var dotArray = [UIView]()
     private var isClickJump = false
     
-    init(item: JEEPageItem!, scrollView: UIScrollView!, onColorFunc: ((pageIndex: Int) -> UIColor)?, offColorFunc: ((pageIndex: Int) -> UIColor)?) {
+    init(item: JEEPageItem!, scrollView: UIScrollView!) {
         super.init(frame: CGRectZero)
         self.pageItem = item
         self.pageScrollView = scrollView
         self.pageScrollView.delegate = self
-        self.onColorForPage = onColorFunc
-        self.offColorForPage = offColorFunc
         self.setupView()
     }
     
@@ -72,12 +68,7 @@ class JEEPageControl: UIControl, UIScrollViewDelegate {
         }
         var offColor = self.pageItem.offColor
         var onColor = self.pageItem.onColor
-        if self.onColorForPage != nil {
-            onColor = self.onColorForPage!(pageIndex: 1)
-        }
-        if self.offColorForPage != nil {
-            offColor = self.offColorForPage!(pageIndex: 1)
-        }
+        
         for var i=0; i<self.pageItem.numberOfPages; i++ {
             
             var dotView = UIView(frame: CGRectMake(CGFloat(i)*diameter+CGFloat(i)*space, 0, diameter, diameter))
@@ -101,7 +92,7 @@ class JEEPageControl: UIControl, UIScrollViewDelegate {
         self.isClickJump = true
         let dotView = gesture.view!
         let pageWidth = self.pageScrollView.bounds.size.width * CGFloat(dotView.tag - 1)
-        self.pageScrollView.scrollRectToVisible(CGRectMake(pageWidth, self.pageScrollView.top, self.pageScrollView.width, self.pageScrollView.height), animated: true)
+        self.pageScrollView.scrollRectToVisible(CGRectMake(pageWidth, self.pageScrollView.frame.origin.y, self.pageScrollView.frame.size.width, self.pageScrollView.frame.size.height), animated: true)
         self.sendActionsForControlEvents(UIControlEvents.ValueChanged)
     }
     
@@ -118,19 +109,6 @@ class JEEPageControl: UIControl, UIScrollViewDelegate {
         if progress > 0 && progress < 1 {
             var offColor = self.pageItem.offColor
             var onColor = self.pageItem.onColor
-            if self.onColorForPage != nil {
-                onColor = self.onColorForPage!(pageIndex: self.currentPage)
-            }
-            if self.offColorForPage != nil {
-                offColor = self.offColorForPage!(pageIndex: self.currentPage)
-                
-                for dotView in self.dotArray {
-                    if dotView != fromDotView {
-                        dotView.backgroundColor = self.colorTransformToAnother(dotView.backgroundColor!, toColor: offColor, progress: progress)
-                    }
-                }
-            }
-
             if toDotView != nil {
                 toDotView!.transform = CGAffineTransformMakeScale(1+diffTransform*progress, 1+diffTransform*progress)
                 
@@ -144,14 +122,14 @@ class JEEPageControl: UIControl, UIScrollViewDelegate {
     func colorTransformToAnother(fromColor: UIColor, toColor: UIColor, progress: CGFloat) -> UIColor {
         let fromRGB = CGColorGetComponents(fromColor.CGColor)
         let toRGB = CGColorGetComponents(toColor.CGColor)
-        return UIColor(red: fromRGB[0] + (toRGB[0] - fromRGB[0])*progress, green: fromRGB[1] + (toRGB[1] - fromRGB[1])*progress, blue: fromRGB[2] + (toRGB[2] - fromRGB[2])*progress, alpha: 1)
+        return UIColor(red: fromRGB[0] + (toRGB[0] - fromRGB[0])*progress, green: fromRGB[1] + (toRGB[1] - fromRGB[1])*progress, blue: fromRGB[2] + (toRGB[2] - fromRGB[2])*progress, alpha: fromRGB[3] + (toRGB[3] - fromRGB[3])*progress)
     }
 }
 
 class JEEPageItem {
     var numberOfPages: Int!
     var onColor: UIColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
-    var offColor: UIColor = UIColor(red: 132/255.0, green: 219/255.0, blue: 255/255.0, alpha: 1)
+    var offColor: UIColor = UIColor(red: 233/255.0, green: 233/255.0, blue: 233/255.0, alpha: 0.4)
     var indicatorDiameterOn: CGFloat = 24
     var indicatorDiameterOff: CGFloat = 14
     var indicatorSpace: CGFloat = 18

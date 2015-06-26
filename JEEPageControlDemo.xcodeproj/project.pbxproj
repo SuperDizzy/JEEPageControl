@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F934E7331B3D145E0000430C /* JEEPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934E7321B3D145E0000430C /* JEEPageControl.swift */; };
 		F9C214E91B3C1936007BF781 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C214E81B3C1936007BF781 /* AppDelegate.swift */; };
 		F9C214EB1B3C1936007BF781 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C214EA1B3C1936007BF781 /* ViewController.swift */; };
 		F9C214EE1B3C1936007BF781 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C214EC1B3C1936007BF781 /* Main.storyboard */; };
 		F9C214F01B3C1936007BF781 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C214EF1B3C1936007BF781 /* Images.xcassets */; };
 		F9C214F31B3C1936007BF781 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C214F11B3C1936007BF781 /* LaunchScreen.xib */; };
 		F9C214FF1B3C1936007BF781 /* JEEPageControlDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C214FE1B3C1936007BF781 /* JEEPageControlDemoTests.swift */; };
-		F9C2150A1B3C1954007BF781 /* JEEPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C215091B3C1954007BF781 /* JEEPageControl.swift */; };
 		F9C215101B3C1B2B007BF781 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F9C2150C1B3C1B2B007BF781 /* 1.png */; };
 		F9C215111B3C1B2B007BF781 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9C2150D1B3C1B2B007BF781 /* 2.png */; };
 		F9C215121B3C1B2B007BF781 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = F9C2150E1B3C1B2B007BF781 /* 3.png */; };
@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F934E7321B3D145E0000430C /* JEEPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JEEPageControl.swift; sourceTree = "<group>"; };
 		F9C214E31B3C1936007BF781 /* JEEPageControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JEEPageControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C214E71B3C1936007BF781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C214E81B3C1936007BF781 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		F9C214F81B3C1936007BF781 /* JEEPageControlDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JEEPageControlDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C214FD1B3C1936007BF781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C214FE1B3C1936007BF781 /* JEEPageControlDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JEEPageControlDemoTests.swift; sourceTree = "<group>"; };
-		F9C215091B3C1954007BF781 /* JEEPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JEEPageControl.swift; sourceTree = "<group>"; };
 		F9C2150C1B3C1B2B007BF781 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		F9C2150D1B3C1B2B007BF781 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		F9C2150E1B3C1B2B007BF781 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
@@ -66,9 +66,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F934E7311B3D145E0000430C /* JEEPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				F934E7321B3D145E0000430C /* JEEPageControl.swift */,
+			);
+			path = JEEPageControl;
+			sourceTree = "<group>";
+		};
 		F9C214DA1B3C1936007BF781 = {
 			isa = PBXGroup;
 			children = (
+				F934E7311B3D145E0000430C /* JEEPageControl */,
 				F9C214E51B3C1936007BF781 /* JEEPageControlDemo */,
 				F9C214FB1B3C1936007BF781 /* JEEPageControlDemoTests */,
 				F9C214E41B3C1936007BF781 /* Products */,
@@ -88,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				F9C2150B1B3C1B2B007BF781 /* pic */,
-				F9C215081B3C1954007BF781 /* JEEPageControl */,
 				F9C214E81B3C1936007BF781 /* AppDelegate.swift */,
 				F9C214EA1B3C1936007BF781 /* ViewController.swift */,
 				F9C214EC1B3C1936007BF781 /* Main.storyboard */,
@@ -122,14 +130,6 @@
 				F9C214FD1B3C1936007BF781 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F9C215081B3C1954007BF781 /* JEEPageControl */ = {
-			isa = PBXGroup;
-			children = (
-				F9C215091B3C1954007BF781 /* JEEPageControl.swift */,
-			);
-			path = JEEPageControl;
 			sourceTree = "<group>";
 		};
 		F9C2150B1B3C1B2B007BF781 /* pic */ = {
@@ -249,7 +249,7 @@
 			files = (
 				F9C214EB1B3C1936007BF781 /* ViewController.swift in Sources */,
 				F9C214E91B3C1936007BF781 /* AppDelegate.swift in Sources */,
-				F9C2150A1B3C1954007BF781 /* JEEPageControl.swift in Sources */,
+				F934E7331B3D145E0000430C /* JEEPageControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
