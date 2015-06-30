@@ -1,0 +1,27 @@
+{
+  "name": "JEEPageControl",
+  "version": "0.1",
+  "summary": "A Custom PageControl for Swift",
+  "homepage": "https://github.com/zackjee/JEEPageControl",
+  "screenshots": "https://cloud.githubusercontent.com/assets/6183006/8360114/1eb94d68-1b9d-11e5-9178-0d5c72052a13.gif",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Junjee": "zjj200479@gmail.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/zackjee/JEEPageControl.git",
+    "tag": "0.1"
+  },
+  "source_files": "JEEPageControl/*.swift",
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "requires_arc": true
+}
