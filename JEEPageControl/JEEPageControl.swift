@@ -29,7 +29,7 @@ class JEEPageControl: UIControl, UIScrollViewDelegate {
         self.setupView()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -62,16 +62,16 @@ class JEEPageControl: UIControl, UIScrollViewDelegate {
             diameter = pageStatic.kDotDiameterOff
         }
         
-        var space = self.pageItem.indicatorSpace
+        let space = self.pageItem.indicatorSpace
         if space <= 0 {
             diameter = pageStatic.kDotSpace
         }
-        var offColor = self.pageItem.offColor
-        var onColor = self.pageItem.onColor
+        let offColor = self.pageItem.offColor
+        let onColor = self.pageItem.onColor
         
         for var i=0; i<self.pageItem.numberOfPages; i++ {
             
-            var dotView = UIView(frame: CGRectMake(CGFloat(i)*diameter+CGFloat(i)*space, 0, diameter, diameter))
+            let dotView = UIView(frame: CGRectMake(CGFloat(i)*diameter+CGFloat(i)*space, 0, diameter, diameter))
             dotView.layer.cornerRadius = diameter/2
             dotView.backgroundColor = offColor
             dotView.tag = i+1
@@ -82,7 +82,7 @@ class JEEPageControl: UIControl, UIScrollViewDelegate {
             self.dotArray.append(dotView)
         }
         if self.pageItem.numberOfPages > 0 {
-            var bigTransform = self.pageItem.indicatorDiameterOn/self.pageItem.indicatorDiameterOff
+            let bigTransform = self.pageItem.indicatorDiameterOn/self.pageItem.indicatorDiameterOff
             self.dotArray[0].transform = CGAffineTransformMakeScale(bigTransform, bigTransform)
             self.dotArray[0].backgroundColor = onColor
         }
@@ -103,12 +103,12 @@ class JEEPageControl: UIControl, UIScrollViewDelegate {
         }else if !forward&&self.currentPage > 1 {
             toDotView = self.dotArray[self.currentPage - 2]
         }
-        var fromDotView = self.dotArray[self.currentPage - 1]
-        var diffTransform = (self.pageItem.indicatorDiameterOn - self.pageItem.indicatorDiameterOff)/self.pageItem.indicatorDiameterOff
+        let fromDotView = self.dotArray[self.currentPage - 1]
+        let diffTransform = (self.pageItem.indicatorDiameterOn - self.pageItem.indicatorDiameterOff)/self.pageItem.indicatorDiameterOff
 
         if progress > 0 && progress < 1 {
-            var offColor = self.pageItem.offColor
-            var onColor = self.pageItem.onColor
+            let offColor = self.pageItem.offColor
+            let onColor = self.pageItem.onColor
             if toDotView != nil {
                 toDotView!.transform = CGAffineTransformMakeScale(1+diffTransform*progress, 1+diffTransform*progress)
                 
